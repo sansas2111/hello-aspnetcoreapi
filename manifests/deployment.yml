@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: helloaspnetcoreapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloaspnetcoreapi
+  template:
+    metadata:
+      labels:
+        app: helloaspnetcoreapi 
+    spec:
+      containers:
+        - name: helloaspnetcoreapi 
+          image: slftest.azurecr.io/helloaspnetcoreapi
+          ports:
+          - containerPort: 80
